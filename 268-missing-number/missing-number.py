@@ -5,9 +5,9 @@ class Solution(object):
         :rtype: int
         """
         n = len(nums)
-        needed = [i for i in range(n + 1)]
+        # needed = [i for i in range(n + 1)]
 
-        for value in needed:
+        for value in range(n+1):
             if value not in nums:
                 return value
 
