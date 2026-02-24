@@ -8,16 +8,21 @@ class Solution(object):
         
         n = len(heights)
         
-        for i in range(n):
+        for i in range(1, n):
             
-            max_index = i
+            key_height = heights[i]
+            key_name = names[i]
             
-            for j in range(i + 1, n):
-                if heights[j] > heights[max_index]:
-                    max_index = j
+            j = i - 1
             
-            heights[i], heights[max_index] = heights[max_index], heights[i]
+            while j >= 0 and heights[j] < key_height:
+                
+                heights[j + 1] = heights[j]
+                names[j + 1] = names[j]
+                
+                j -= 1
             
-            names[i], names[max_index] = names[max_index], names[i]
+            heights[j + 1] = key_height
+            names[j + 1] = key_name
         
         return names
