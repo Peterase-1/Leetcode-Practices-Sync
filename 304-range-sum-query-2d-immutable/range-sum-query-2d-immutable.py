@@ -8,7 +8,7 @@ class NumMatrix(object):
         r = len(matrix)
         c = len(matrix[0])
         
-        # st = prefix sum table
+
         self.st = [[0] * (c + 1) for _ in range(r + 1)]
         
         for i in range(r):
